@@ -14,7 +14,7 @@ export const MainHeader = ( {score, moves, onReset} ) => {
         </div>
       </div>
 
-      <button className="reset-btn" onClick={onReset}>🎮️New Game</button>
+      <button className="reset-btn" onClick={onReset}>🎮️ New Game</button>
     </div>
   );
 };
