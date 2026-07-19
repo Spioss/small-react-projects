@@ -1,0 +1,66 @@
+.win-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fade-in 0.3s ease;
+}
+
+.win-toast {
+  background: linear-gradient(145deg, #2e2e52, #1c1c38);
+  border: 2px solid #6dff8b;
+  box-shadow:
+    0 0 8px rgba(109, 255, 139, 0.6),
+    0 0 24px rgba(109, 255, 139, 0.35);
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  text-align: center;
+  color: white;
+  animation: pop-in 0.35s ease;
+}
+
+.win-toast h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.win-toast p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.win-toast button {
+  background: #6dff8b;
+  color: #1c1c38;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.win-toast button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

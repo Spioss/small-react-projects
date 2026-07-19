@@ -1,6 +1,6 @@
 import "./Header.css";
 
-export const MainHeader = ( {score, moves} ) => {
+export const MainHeader = ( {score, moves, onReset} ) => {
   return (
     <div className="main">
       <h1>🎲 Memory Card Game</h1>
@@ -13,6 +13,8 @@ export const MainHeader = ( {score, moves} ) => {
           MOVES <span className="stat-value">{moves}</span>
         </div>
       </div>
+
+      <button className="reset-btn" onClick={onReset}>🎮️New Game</button>
     </div>
   );
 };

@@ -13,3 +13,17 @@ body {
   color: #ffffff;
   background: #16171d;
 }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  background-color: #202022;
+
+  margin-top: 20px;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  width: min(80vw, 1000px);
+
+  border: 1px rgb(77, 77, 170) solid;
+}

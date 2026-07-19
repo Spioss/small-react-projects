@@ -1,0 +1,62 @@
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: bold;
+  color: white;
+
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.5s ease, border-color 0.25s ease;
+}
+
+.card-front {
+  background: linear-gradient(145deg, #4d4daa, #35356e);
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background: linear-gradient(145deg, #2e2e52, #1c1c38);
+  transform: rotateY(-180deg);
+}
+
+/* Rotation */
+.card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+.card:not(.flipped):hover .card-front {
+  transform: scale(1.05);
+  border: 1px solid rgb(120, 120, 220);
+}
+
+/* matched karty */
+.card.matched .card-front,
+.card.matched .card-back {
+  border: 2px solid #6dff8b;
+  box-shadow:
+    0 0 8px rgba(109, 255, 139, 0.6),
+    0 0 20px rgba(109, 255, 139, 0.4),
+    inset 0 0 12px rgba(109, 255, 139, 0.25);
+  background: hsla(132, 100%, 71%, 0.209);
+  cursor: default;
+}
