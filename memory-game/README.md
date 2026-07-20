@@ -1,16 +1,61 @@
-# React + Vite
+# 🎲 Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple memory (matching) card game built with React and Vite. The goal is to find all the matching pairs in as few moves as possible.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Memory Game screenshot](./src/assets/screen.png) 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to play
 
-## Expanding the Oxlint configuration
+1. Click a card to flip it over.
+2. Click a second card — if the values match, the pair stays flipped and your score increases.
+3. If they don't match, both cards flip back after a short delay.
+4. The game ends once all pairs are found — a win toast appears showing your total moves.
+5. Click **🎮 New Game** at any time to start over.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tech stack
+
+- [React](https://react.dev/) 19
+- [Vite](https://vitejs.dev/) 8
+- [Oxlint](https://oxc.rs/) for linting
+
+## Getting started
+
+```bash
+# navigate to the project folder
+cd memory-game
+
+# install dependencies
+npm install
+
+# start the dev server
+npm run dev
+```
+
+The app will run at the address shown in your terminal (usually `http://localhost:5173`).
+
+### Other commands
+
+```bash
+npm run build     # build for production
+npm run preview   # preview the production build
+npm run lint      # lint the code with Oxlint
+```
+
+## Project structure
+
+```
+memory-game/
+├── src/
+│   ├── components/
+│   │   ├── Card.jsx        # individual card
+│   │   ├── Header.jsx      # header with score, moves and reset
+│   │   └── WinToast.jsx    # win screen
+│   ├── App.jsx              # main game logic
+│   ├── main.jsx
+│   └── index.css
+├── public/
+└── package.json
+```
